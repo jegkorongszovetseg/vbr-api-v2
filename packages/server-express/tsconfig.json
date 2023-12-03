@@ -1,7 +1,10 @@
 {
   "extends": "@tsconfig/node-lts/tsconfig.json",
   "compilerOptions": {
-    "outDir": "dist"
+    "outDir": "dist",
+  },
+  "ts-node": {
+    "esm": true
   },
   "include": ["src"],
   "exclude": ["node_modules"]

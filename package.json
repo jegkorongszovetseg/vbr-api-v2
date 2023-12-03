@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "pnpm --stream -r run build",
     "release": "bumpp -r"
   },
   "keywords": [],
