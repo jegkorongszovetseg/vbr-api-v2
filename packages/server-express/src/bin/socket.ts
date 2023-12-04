@@ -1,5 +1,5 @@
 import { Server } from "socket.io";
-import { App } from "./types";
+import { App } from "../types";
 
 export default function useSocket(server: App['server']): void {
   const io = new Server(server, {

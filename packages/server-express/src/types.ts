@@ -10,4 +10,5 @@ export interface CreateAppOptions {
   app: () => Promise<App>;
   routes: (router: any) => void;
   socket?: any;
+  mongodb?: () => Promise<void>;
 }

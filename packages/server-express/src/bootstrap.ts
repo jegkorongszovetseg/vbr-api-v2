@@ -6,7 +6,7 @@ export default async function createApp(
   options: CreateAppOptions
 ): Promise<void> {
   console.log("INIT");
-  const { app, routes, socket } = options;
+  const { app, routes, socket, mongodb } = options;
   const { app: expressApp, server } = await app();
   defaultExpressSettings(expressApp);
 
@@ -17,6 +17,9 @@ export default async function createApp(
   // APP
   socket?.(server);
   expressApp.use(router);
+
+  // Databese
+  await mongodb?.();
 }
 
 function defaultExpressSettings(app: Express) {
