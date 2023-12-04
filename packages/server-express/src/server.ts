@@ -1,13 +1,18 @@
 import express from "express";
-// import http from "node:http";
 import { listen } from "listhen";
+import { App } from "./types";
 
-const app = express();
+async function createAppServer(): Promise<App> {
+  const app = express();
 
-// const server = http.createServer(app);
+  const { server } = await listen(app, {
+    port: 3890,
+  });
 
-// console.log("LISTEN", app);
-// app.listen(3890);
-const { server } = await listen(app, { port: 3890 });
+  return {
+    app,
+    server,
+  };
+}
 
-export default { app, server };
+export default createAppServer;

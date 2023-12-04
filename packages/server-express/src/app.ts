@@ -8,12 +8,13 @@
 // createApp()
 
 import createApp from "./bootstrap";
-import server from "./server";
-import router from "./routes";
+import appServer from "./server";
+// import { router } from "./routes";
+import { routes } from "vbr-api-v2-routes";
 import socket from "./socket";
 
-createApp({
-  app: server,
-  router,
+await createApp({
+  app: appServer,
+  routes,
   socket,
 });

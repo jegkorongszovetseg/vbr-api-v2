@@ -1,11 +1,28 @@
-export default function createApp(options = {}): void {
-  console.log('INIT')
-  const {
-    app: { app, server },
-    router,
-    socket,
-  } = options;
+import express from "express";
+import type { Express } from "express";
+import { CreateAppOptions } from "./types";
 
+export default async function createApp(
+  options: CreateAppOptions
+): Promise<void> {
+  console.log("INIT");
+  const { app, routes, socket } = options;
+  const { app: expressApp, server } = await app();
+  defaultExpressSettings(expressApp);
+
+  // ROUTER
+  const router = express.Router() as Express;
+  routes(router);
+
+  // APP
   socket?.(server);
-  app.use(router);
+  expressApp.use(router);
+}
+
+function defaultExpressSettings(app: Express) {
+  app.use(express.json());
+  app.use(express.urlencoded({ extended: false }));
+  // app.use(cors());
+  // app.use(cookieParser());
+  app.disable("x-powered-by");
 }

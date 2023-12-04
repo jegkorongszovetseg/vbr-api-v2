@@ -1,7 +1,9 @@
 {
   "extends": "@tsconfig/node-lts/tsconfig.json",
   "compilerOptions": {
-    "outDir": "dist",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "outDir": "dist"
   },
   "ts-node": {
     "esm": true
