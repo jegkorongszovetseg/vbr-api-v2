@@ -1,29 +1,15 @@
 {
   "extends": "@tsconfig/node-lts/tsconfig.json",
-  // "compilerOptions": {
-  //   // "module": "NodeNext",
-  //   "moduleResolution": "NodeNext",
-  //   "allowSyntheticDefaultImports": true,
-  //   "outDir": "dist",
-  //   "removeComments": false,
-  //   "sourceMap": true,
-  //   "declaration": true,
-  //   "strict": true,
-  //   "noEmitOnError": true,
-  // },
   "compilerOptions": {
-    "moduleResolution": "node",
-    "removeComments": false,
-    "sourceMap": true,
-    "target": "es2018",
+    "target": "ES6",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
     "outDir": "dist",
-    "declaration": true,
     "strict": true,
-    "module": "esnext",
-    "noEmitOnError": true,
-    "lib": ["es2017"],
-    "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true
+    "declaration": true,
+    "resolveJsonModule": true,
+    "types": ["node"]
   },
   "include": ["src"],
   "exclude": ["node_modules"]
