@@ -12,6 +12,25 @@ importers:
         specifier: ^9.2.0
         version: 9.2.0
 
+  dashboard:
+    dependencies:
+      vue:
+        specifier: ^3.3.8
+        version: 3.3.9(typescript@5.3.2)
+    devDependencies:
+      '@vitejs/plugin-vue':
+        specifier: ^4.5.0
+        version: 4.5.1(vite@5.0.4)(vue@3.3.9)
+      typescript:
+        specifier: ^5.2.2
+        version: 5.3.2
+      vite:
+        specifier: ^5.0.0
+        version: 5.0.4
+      vue-tsc:
+        specifier: ^1.8.22
+        version: 1.8.24(typescript@5.3.2)
+
   packages/routes:
     dependencies:
       '@types/express':
@@ -21,7 +40,7 @@ importers:
         specifier: ^4.18.2
         version: 4.18.2
 
-  packages/server-express:
+  server-express:
     dependencies:
       express:
         specifier: ^4.18.2
@@ -34,7 +53,7 @@ importers:
         version: 4.7.2
       vbr-api-v2-routes:
         specifier: workspace:^
-        version: link:../routes
+        version: link:../packages/routes
     devDependencies:
       '@tsconfig/node-lts':
         specifier: ^18.12.5
@@ -60,25 +79,6 @@ importers:
       unbuild:
         specifier: ^2.0.0
         version: 2.0.0(typescript@5.3.2)
-
-  packages/vbr-api-dashboard:
-    dependencies:
-      vue:
-        specifier: ^3.3.8
-        version: 3.3.9(typescript@5.3.2)
-    devDependencies:
-      '@vitejs/plugin-vue':
-        specifier: ^4.5.0
-        version: 4.5.1(vite@5.0.4)(vue@3.3.9)
-      typescript:
-        specifier: ^5.2.2
-        version: 5.3.2
-      vite:
-        specifier: ^5.0.0
-        version: 5.0.4
-      vue-tsc:
-        specifier: ^1.8.22
-        version: 1.8.24(typescript@5.3.2)
 
 packages:
 

@@ -18,7 +18,7 @@ import { setup } from "./bin/mongodb";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-dotenv.config({ path: resolve(__dirname, "../../../.env") });
+dotenv.config({ path: resolve(__dirname, "../../.env") });
 
 createApp({
   app: appServer,

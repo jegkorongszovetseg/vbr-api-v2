@@ -6,7 +6,7 @@
   "scripts": {
     "build": "unbuild",
     "dev": "tsx watch src/main.ts",
-    "preview": "node -r dotenv/config ./dist/main.mjs dotenv_config_path=../../.env dotenv_config_debug=true"
+    "preview": "node -r dotenv/config ./dist/main.mjs dotenv_config_debug=true"
   },
   "keywords": [],
   "author": "",
