@@ -2,16 +2,21 @@
   "name": "vbr-api-v2-server-express",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "tsc",
+    "build": "unbuild",
     "dev": "tsx watch src/main.ts",
-    "preview": "node dist/main.js"
+    "preview": "node -r dotenv/config ./dist/main.mjs dotenv_config_path=../../.env dotenv_config_debug=true"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "files": ["dist"],
+  "exports": {
+    ".": {
+      "import": "./dist/main.mjs"
+    }
+  },
   "devDependencies": {
     "@tsconfig/node-lts": "^18.12.5",
     "@types/express": "^4.17.21",
@@ -19,7 +24,8 @@
     "dotenv": "^16.3.1",
     "listhen": "^1.5.5",
     "tsx": "^4.6.2",
-    "typescript": "^5.3.2"
+    "typescript": "^5.3.2",
+    "unbuild": "^2.0.0"
   },
   "dependencies": {
     "express": "^4.18.2",

@@ -1,12 +1,15 @@
 {
   "extends": "@tsconfig/node-lts/tsconfig.json",
   "compilerOptions": {
-    "module": "esnext",
-    "moduleResolution": "node",
-    "outDir": "dist"
-  },
-  "ts-node": {
-    "esm": true
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "allowSyntheticDefaultImports": true,
+    "outDir": "dist",
+    "removeComments": false,
+    "sourceMap": true,
+    "declaration": true,
+    "strict": true,
+    "noEmitOnError": true,
   },
   "include": ["src"],
   "exclude": ["node_modules"]

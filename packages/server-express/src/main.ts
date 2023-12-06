@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import createApp from "./bootstrap";
 import appServer from "./bin/server";
 // import { router } from "./routes";
-import { routes } from "vbr-api-v2-routes";
+import { routes } from "./routes";
 import socket from "./bin/socket";
 import { setup } from "./bin/mongodb";
 
@@ -20,7 +20,7 @@ const __dirname = dirname(__filename);
 
 dotenv.config({ path: resolve(__dirname, "../../../.env") });
 
-await createApp({
+createApp({
   app: appServer,
   routes,
   socket,
