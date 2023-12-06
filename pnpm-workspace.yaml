@@ -1,3 +1,4 @@
 packages:
+  - 'server-express'
+  - 'vbr-api-dashboard'
   - 'packages/*'
-  - 'packages/server-express'
