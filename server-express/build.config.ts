@@ -1,11 +1,12 @@
 export default {
-  entries: [{ input: "src/main", outDir: "dist", format: "esm" }],
-  rollup: {
-    inlineDependencies: true,
-  },
-  externals: [
-    'express',
-    'mongoose',
-    'socket.io'
-  ]
+  entries: [
+    "src/main",
+    // {  builder: "mkdist", input: "src/main", outDir: "dist", format: "esm" }
+  ],
+  // rollup: {
+  //   esbuild: {
+  //     minify: true,
+  //   },
+  // },
+  externals: ["express", "mongoose", "socket.io", "listhen", "dotenv"],
 };

@@ -5,16 +5,12 @@ import { CreateAppOptions } from "./types";
 export default async function createApp(
   options: CreateAppOptions
 ): Promise<void> {
-  console.log("INIT");
-  const { app, routes, socket, mongodb } = options;
+  const { app, router, socket, mongodb } = options;
   const { app: expressApp, server } = await app();
   defaultExpressSettings(expressApp);
 
-  // ROUTER
-  const router = express.Router() as Express;
-  routes(router);
-
   // APP
+  // ROUTER
   socket?.(server);
   expressApp.use(router);
 
