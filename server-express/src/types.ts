@@ -9,6 +9,6 @@ export interface App {
 export interface CreateAppOptions {
   app: () => Promise<App>;
   router: Express;
-  socket?: any;
+  socket?: (server: App['server']) => void;
   mongodb?: () => Promise<void>;
 }

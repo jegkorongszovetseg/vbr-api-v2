@@ -1,7 +1,7 @@
 import { Server } from "socket.io";
 import { App } from "../types";
 
-export default function useSocket(server: App['server']): void {
+export default function (server: App['server']): void {
   const io = new Server(server, {
     cors: {
       origin: process.env.SITE_URL,
@@ -10,6 +10,7 @@ export default function useSocket(server: App['server']): void {
       credentials: true,
     },
   });
+  console.log(io, typeof io)
 
   io.of("/").on("connection", (socket) => {
     console.log("Socket connection:", socket.id);
