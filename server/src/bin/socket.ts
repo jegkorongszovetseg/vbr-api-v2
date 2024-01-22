@@ -10,7 +10,7 @@ export default function (server: App['server']): void {
       credentials: true,
     },
   });
-  console.log(io, typeof io)
+  // console.log(io, typeof io)
 
   io.of("/").on("connection", (socket) => {
     console.log("Socket connection:", socket.id);

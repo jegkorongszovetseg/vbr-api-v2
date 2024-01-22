@@ -2,7 +2,7 @@ import { fileURLToPath } from "node:url";
 import { resolve, dirname } from "node:path";
 import dotenv from "dotenv";
 import createApp from "./bootstrap";
-import appServer from "./bin/server";
+import appServer from "./bin/server-h3";
 import { router } from "./routes";
 import socket from "./bin/socket";
 import { setup } from "./bin/mongodb";
@@ -21,7 +21,7 @@ dotenv.config({ path: resolve(__dirname, "../../.env") });
 
 createApp({
   app: appServer,
-  router,
+  routes: router,
   socket,
   mongodb: setup,
 });
