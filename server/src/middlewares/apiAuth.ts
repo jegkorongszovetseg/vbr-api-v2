@@ -1,10 +1,7 @@
-import type { Request, Response, NextFunction } from "express";
+import { defineRequestMiddleware, getHeaders } from "h3";
+import type { H3Event } from "h3";
 
-export const apiAuth = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
-  
-  next();
-};
+export const apiAuth = defineRequestMiddleware((event: H3Event)=> {
+  const headers = getHeaders(event)
+  console.log(headers.host)
+});

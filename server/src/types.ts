@@ -1,5 +1,6 @@
 import type { App as h3App, RouterMethod } from "h3";
 import type { Listener } from "listhen";
+import type { ZodRawShape } from "zod";
 
 export interface App {
   app: h3App;
@@ -11,7 +12,7 @@ export type Routes = {
   name: string;
   method: RouterMethod;
   handler: () => void;
-  validation: null;
+  validation: ZodRawShape | null;
 };
 
 interface RoutesModule {

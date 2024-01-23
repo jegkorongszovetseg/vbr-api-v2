@@ -1,15 +1,24 @@
-import { defineEventHandler, createRouter } from "h3";
+import { defineEventHandler, createRouter, defineRequestMiddleware } from "h3";
 import type { Routes } from "../types";
+import { paramsValidation } from "../middlewares/paramsValidation";
 
-
-export function useRouter(routes: Routes[]) {
+export function useRouter(routes: Routes[], requestMiddlewares = []) {
   const router = createRouter();
 
   for (const route of routes) {
+    const validationMiddleware = route.validation
+      ? defineRequestMiddleware((e) => paramsValidation(e, route.validation))
+      : null;
+
     router.add(
       route.path,
-      defineEventHandler(route.handler),
-      route.method,
+      defineEventHandler({
+        onRequest: validationMiddleware
+          ? [validationMiddleware, ...requestMiddlewares]
+          : [...requestMiddlewares],
+        handler: route.handler,
+      }),
+      route.method
     );
   }
 
