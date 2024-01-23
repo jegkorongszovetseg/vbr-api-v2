@@ -4,12 +4,12 @@
     "target": "ES6",
     "module": "ESNext",
     "moduleResolution": "Node",
-    "esModuleInterop": true,
-    "outDir": "dist",
+    "resolveJsonModule": true,
+    "types": ["node"],
     "strict": true,
     "declaration": true,
-    "resolveJsonModule": true,
-    "types": ["node"]
+    "outDir": "dist",
+    "esModuleInterop": true
   },
   "include": ["src"],
   "exclude": ["node_modules"]

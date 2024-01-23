@@ -1,6 +1,6 @@
 export default {
   entries: [
-    "src/main",
+    'src/main',
     // {  builder: "mkdist", input: "src/main", outDir: "dist", format: "esm" }
   ],
   // rollup: {
@@ -8,5 +8,5 @@ export default {
   //     minify: true,
   //   },
   // },
-  externals: ["express", "mongoose", "socket.io", "listhen", "dotenv"],
-};
+  externals: ['express', 'mongoose', 'socket.io', 'listhen', 'dotenv'],
+}
