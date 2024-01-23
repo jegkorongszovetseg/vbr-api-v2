@@ -1,3 +1,4 @@
+import process from 'node:process'
 import { Server } from 'socket.io'
 import type { App } from '../types'
 
@@ -13,6 +14,7 @@ export default function (server: App['server']): void {
   // console.log(io, typeof io)
 
   io.of('/').on('connection', (socket) => {
+    // eslint-disable-next-line no-console
     console.log('Socket connection:', socket.id)
   })
 }

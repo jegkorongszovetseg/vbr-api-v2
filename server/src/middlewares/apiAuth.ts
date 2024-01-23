@@ -3,5 +3,7 @@ import type { H3Event } from 'h3'
 
 export const apiAuth = defineRequestMiddleware((event: H3Event) => {
   const headers = getHeaders(event)
+  
+  // eslint-disable-next-line no-console
   console.log(headers.host)
 })

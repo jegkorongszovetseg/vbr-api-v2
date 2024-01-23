@@ -7,9 +7,7 @@ export async function paramsValidation(event: H3Event, schema: ZodRawShape | nul
   const params = getQuery(event)
   const result = z.object(schema || {}).safeParse(params)
 
-  if (!result.success)
-  // throw result.error.issues
-  {
+  if (!result.success) {
     throw createError({
       status: 500,
       message: 'Fatal error',
