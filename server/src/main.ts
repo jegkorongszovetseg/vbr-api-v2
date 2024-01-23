@@ -3,7 +3,7 @@ import { resolve, dirname } from "node:path";
 import dotenv from "dotenv";
 import createApp from "./bootstrap";
 import appServer from "./bin/server-h3";
-import { router } from "./routes";
+import * as routes from "./routes";
 import socket from "./bin/socket";
 import { setup } from "./bin/mongodb";
 
@@ -21,7 +21,7 @@ dotenv.config({ path: resolve(__dirname, "../../.env") });
 
 createApp({
   app: appServer,
-  routes: router,
+  routes,
   socket,
   mongodb: setup,
 });
