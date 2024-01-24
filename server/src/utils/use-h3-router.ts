@@ -1,6 +1,6 @@
 import { createRouter, defineEventHandler, defineRequestMiddleware } from 'h3'
 import type { Routes } from '../types'
-import { paramsValidation } from '../middlewares/paramsValidation'
+import { paramsValidation } from '../middlewares/params-validation'
 
 export function useRouter(routes: Routes[], requestMiddlewares = []) {
   const router = createRouter()

@@ -1,11 +1,12 @@
 import {
   createRouter,
+  eventHandler,
   defineEventHandler,
   useBase,
 } from 'h3'
 import type { App } from 'h3'
 import type { CreateAppOptions } from '../types'
-import { apiAuth } from '../middlewares/apiAuth'
+import { apiAuth } from '../middlewares/api-auth'
 import { useRouter } from './use-h3-router'
 
 export function useH3Server(app: App, routes: CreateAppOptions['routes']) {
