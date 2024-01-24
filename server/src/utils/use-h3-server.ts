@@ -1,6 +1,5 @@
 import {
   createRouter,
-  eventHandler,
   defineEventHandler,
   useBase,
 } from 'h3'

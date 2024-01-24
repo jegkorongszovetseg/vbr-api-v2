@@ -9,6 +9,7 @@ async function createAppServer(): Promise<App> {
   // console.log('process.env.SERVER_PORT', process.env.SERVER_PORT)
   const { server } = await listen(toNodeListener(app), {
     port: process.env.SERVER_PORT,
+    public: true,
   })
 
   return {
