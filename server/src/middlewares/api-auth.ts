@@ -1,5 +1,6 @@
 import { defineRequestMiddleware, getHeaders } from 'h3'
 import type { H3Event } from 'h3'
+
 // import { sendError } from '../utils/use-response'
 // import { AuthError } from '../utils/errors'
 
