@@ -8,8 +8,8 @@ export class ErrorBase<DataT = unknown> extends Error {
 
   constructor(error: string | _ZodError) {
     super(error = '')
-    if(typeof error === 'string')
-      this.statusMessage = error;
+    if (typeof error === 'string')
+      this.statusMessage = error
   }
 }
 
