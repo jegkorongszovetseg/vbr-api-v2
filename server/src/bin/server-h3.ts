@@ -10,6 +10,7 @@ async function createAppServer(): Promise<App> {
   const { server } = await listen(toNodeListener(app), {
     port: process.env.SERVER_PORT,
     public: true,
+    qr: false,
   })
 
   return {

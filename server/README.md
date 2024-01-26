@@ -1,5 +1,5 @@
 # Server
 
 - [ ] JWT webtoken
-- [ ] IVR hívások
-- [ ]
+- [ ] IVR hívások (Axios/oFetch)
+- [ ] 

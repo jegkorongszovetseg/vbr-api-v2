@@ -14,7 +14,7 @@ export function useRouter(routes: Routes[], requestMiddlewares = []) {
       route.path,
       defineEventHandler({
         onRequest: validationMiddleware
-          ? [validationMiddleware, ...requestMiddlewares]
+          ? [validationMiddleware, ...requestMiddlewares, ...route.middlewares = []]
           : [...requestMiddlewares],
         handler: route.handler,
       }),

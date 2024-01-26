@@ -5,7 +5,7 @@ import type { ZodRawShape } from 'zod'
 import { ParamValidationError } from '../utils/errors'
 import { sendError } from '../utils/use-response'
 
-export async function paramsValidation(event: H3Event, schema: ZodRawShape | null): Promise<void> {
+export async function paramsValidation(event: H3Event, schema: ZodRawShape | null | undefined): Promise<void> {
   const params = getQuery(event)
   const result = z.object(schema || {}).safeParse(params)
 
