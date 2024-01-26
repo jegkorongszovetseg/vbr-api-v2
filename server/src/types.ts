@@ -1,4 +1,4 @@
-import type { RouterMethod, App as h3App } from 'h3'
+import type { RouterMethod, _RequestMiddleware, App as h3App } from 'h3'
 import type { Listener } from 'listhen'
 import type { ZodRawShape } from 'zod'
 
@@ -12,7 +12,9 @@ export interface Routes {
   name: string
   method: RouterMethod
   handler: () => void
-  validation: ZodRawShape | null
+  validation?: ZodRawShape | null
+  middlewares?: _RequestMiddleware[]
+  cacheExpire?: number
 }
 
 interface RoutesModule {

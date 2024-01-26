@@ -1,17 +1,14 @@
 import { z } from 'zod'
-import { test } from '../controllers/test'
 import type { Routes } from '../types'
-
-export { vbrApiV2Routes } from './vbr-api-v2'
 
 export const testRoute = [
   {
-    path: '/test',
+    path: '/login',
     name: 'test',
     method: 'get',
-    handler: test,
+    handler: () => [],
     validation: {
-      name: z.string().trim().min(1),
+      name: z.string(),
       age: z.string().optional(),
     },
   },

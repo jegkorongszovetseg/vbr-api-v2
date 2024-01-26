@@ -6,8 +6,10 @@ export class ErrorBase<DataT = unknown> extends Error {
   data?: DataT
   cause?: unknown
 
-  constructor(message?: string, opts: { cause?: unknown } = {}) {
-    super(message, opts)
+  constructor(error: string | _ZodError) {
+    super(error = '')
+    if(typeof error === 'string')
+      this.statusMessage = error;
   }
 }
 
@@ -19,10 +21,10 @@ export class ParamValidationError extends ErrorBase {
   }
 }
 
-export class AuthError extends ErrorBase {
-  constructor() {
-    super()
-    this.statusCode = 401
-    this.statusMessage = 'Auth Error'
-  }
-}
+// export class AuthError extends ErrorBase {
+//   constructor() {
+//     super()
+//     this.statusCode = 401
+//     this.statusMessage = 'Auth Error'
+//   }
+// }

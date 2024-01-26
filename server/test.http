@@ -1,4 +1,4 @@
-GET http://localhost:3456/api/v2/test?name=12
+GET http://localhost:3456/api/v2/test?name=akos
 Content-Type: application/json
 X-API-KEY: 9b918f8ddadbdb2382949a37946642aa9a3f73b8
 Origin: https://jegkorongszovetseg.hu
